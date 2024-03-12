@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="cont">
+    <center><h1>Login</h1></center>
+    <input id="uname" type="text" placeholder="Enter userame"><br>
+    <input id="email" type="email" placeholder="Enter email"><br>
+    <input id="pswd" type="password" placeholder="Enter Password"><br>
+    <button id="sub">Submit</button>
+  </div>
+    
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+        const firebaseConfig = {
+          apiKey: "AIzaSyAbN7M9CgK1flAj5RuFNOoSJD_1mtaJWns",
+          authDomain: "fir-afe8d.firebaseapp.com",
+          databaseURL: "https://fir-afe8d-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "fir-afe8d",
+          storageBucket: "fir-afe8d.appspot.com",
+          messagingSenderId: "553066298543",
+          appId: "1:553066298543:web:db4366f7ff8d350603285a",
+          measurementId: "G-HV02K1W29Z"
+        };
+        const app = initializeApp(firebaseConfig);
+        document.getElementById("sub").addEventListener("click",sub)
+        function sub(){
+          
+        const db = getDatabase(app);
+        const uname= document.getElementById("uname").value
+        const email= document.getElementById("email").value
+        const pswd= document.getElementById("pswd").value
+        set(ref(db,"user/"+uname),{
+          uname:uname,
+          email:email,
+          pswd:pswd
+        })
+        }
+
+      </script>
+</body>
+</html>

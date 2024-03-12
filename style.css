@@ -1,0 +1,31 @@
+body{
+    background-color: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+#sub{
+    margin-left: 55px;
+    margin-top:10px ;
+}
+ #email, #pswd{
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+#uname{
+    border: 1px solid black;
+    border-radius: 10px;
+
+}
+#cont{
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    padding: 0px 70px 10px 70px;
+    transform: scale(1.5);
+    border-radius: 30px;
+}
+h1{
+    color: #1e1e1e;
+}
